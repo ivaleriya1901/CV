@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кожевникова Валерия — Резюме</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f8faff 0%, #eef2f9 100%);
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resume-card {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 48px;
+            box-shadow: 0 30px 60px -20px rgba(0, 20, 40, 0.25),
+                        0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+            padding: 2.8rem 3rem;
+            transition: all 0.2s ease;
+            animation: floatIn 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+        }
+
+        @keyframes floatIn {
+            0% { opacity: 0; transform: translateY(18px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .avatar-block {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.3);
+        }
+
+        .avatar-initials {
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+
+        .title-block h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0b1e3a;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+        }
+
+        .title-block .subtitle {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            color: #475569;
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+
+        .subtitle-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .subtitle-item i {
+            color: #2563eb;
+            font-size: 1.1rem;
+            width: 1.4rem;
+            text-align: center;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 750px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .resume-card {
+                padding: 2rem 1.8rem;
+            }
+            .header {
+                gap: 1.2rem;
+            }
+            .title-block h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #1e4b8c;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+            padding-bottom: 0.7rem;
+        }
+
+        .section-title i {
+            font-size: 1.4rem;
+            color: #2563eb;
+            width: 1.8rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .skill-chip {
+            background: white;
+            padding: 0.7rem 1.3rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(37, 99, 235, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: all 0.2s;
+            color: #1e293b;
+        }
+
+        .skill-chip i {
+            color: #2563eb;
+            font-size: 1.1rem;
+        }
+
+        .skill-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -10px rgba(37, 99, 235, 0.25), 0 0 0 1px #2563eb40;
+            background: #fafdff;
+        }
+
+        .exp-item {
+            background: white;
+            border-radius: 24px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 8px 22px -8px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.08);
+            transition: all 0.2s;
+            border-left: 5px solid #2563eb;
+        }
+
+        .exp-item:hover {
+            box-shadow: 0 16px 26px -12px rgba(37, 99, 235, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.15);
+            transform: scale(1.005);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.4rem 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .exp-name {
+            font-weight: 650;
+            font-size: 1.2rem;
+            color: #0b2b4f;
+        }
+
+        .exp-name i {
+            color: #2563eb;
+            margin-right: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        .exp-tag {
+            background: #e6efff;
+            color: #1e4b8c;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .exp-desc {
+            color: #334155;
+            font-size: 1rem;
+            margin-left: 1.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 550px) {
+            .exp-desc {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .portfolio-link {
+            background: linear-gradient(112deg, #f0f7ff, #e9f0fe);
+            border-radius: 18px;
+            padding: 1.3rem 1.8rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            transition: background 0.2s;
+        }
+
+        .portfolio-link:hover {
+            background: linear-gradient(112deg, #e9f0fe, #dde9ff);
+        }
+
+        .portfolio-text {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            color: #1e3f6e;
+        }
+
+        .portfolio-text i {
+            font-size: 1.7rem;
+            color: #2563eb;
+        }
+
+        .portfolio-link a {
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            font-weight: 500;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: all 0.2s;
+            box-shadow: 0 8px 18px -8px #2563eb90;
+            white-space: nowrap;
+        }
+
+        .portfolio-link a:hover {
+            background: #1d4ed8;
+            transform: scale(1.02);
+            box-shadow: 0 12px 22px -8px #1d4ed8b0;
+        }
+
+        .portfolio-link a i {
+            font-size: 0.9rem;
+        }
+
+        .age-badge {
+            background: #d9e6ff;
+            border-radius: 60px;
+            padding: 0.2rem 1rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #1e4b8c;
+            display: inline-block;
+        }
+
+        /* Образование — компактные карточки */
+        .edu-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1.1rem 1.4rem;
+            margin-bottom: 0.9rem;
+            box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(37, 99, 235, 0.08);
+            border-left: 4px solid #7c3aed;
+            transition: all 0.2s;
+        }
+
+        .edu-item:hover {
+            box-shadow: 0 12px 20px -12px rgba(124, 58, 237, 0.2), 0 0 0 1px rgba(124, 58, 237, 0.15);
+            transform: scale(1.005);
+        }
+
+        .edu-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #0b2b4f;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .edu-name i {
+            color: #7c3aed;
+            font-size: 0.95rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .edu-source {
+            color: #64748b;
+            font-size: 0.88rem;
+            margin-left: 1.55rem;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6f7d91;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-note i {
+            color: #7c3aed;
+            margin: 0 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-card">
+        <div class="header">
+            <div class="avatar-block">
+                <span class="avatar-initials">КВ</span>
+            </div>
+            <div class="title-block">
+                <h1>Кожевникова Валерия</h1>
+                <div class="subtitle">
+                    <span class="subtitle-item">
+                        <i class="fas fa-graduation-cap"></i> НИУ ВШЭ, студент
+                    </span>
+                    <span class="subtitle-item">
+                        <i class="fas fa-cake-candles"></i> 18 лет
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div>
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-code"></i> Навыки
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-chip">
+                            <i class="fas fa-language"></i> Английский C1
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fab fa-python"></i> Python
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-copyright"></i> C++
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-wand-magic-sparkles"></i> Вайбкодинг
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin-top: 1.8rem;">
+                    <div class="section-title">
+                        <i class="fas fa-heart"></i> Интересы
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                        <span class="age-badge"><i class="fas fa-dumbbell" style="margin-right: 6px;"></i>Дзюдо</span>
+                        <span class="age-badge"><i class="fas fa-laptop-code" style="margin-right: 6px;"></i>Кодинг</span>
+                        <span class="age-badge"><i class="fas fa-rocket" style="margin-right: 6px;"></i>Пет-проекты</span>
+                    </div>
+                </div>
+
+                <!-- НОВЫЙ БЛОК: Образование -->
+                <div class="section" style="margin-top: 1.8rem;">
+                    <div class="section-title">
+                        <i class="fas fa-book-open"></i> Образование
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-name">
+                            <i class="fas fa-school"></i>
+                            <span>Общее среднее образование</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-name">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Курс «Python. Фреймворки»</span>
+                        </div>
+                        <div class="edu-source">Платформа «Код Будущего»</div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-name">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Курс по Python «С нуля до анализа данных и их визуализации»</span>
+                        </div>
+                        <div class="edu-source">Платформа «СберУнивер»</div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-name">
+                            <i class="fas fa-terminal"></i>
+                            <span>Самостоятельное изучение C++</span>
+                        </div>
+                        <div class="edu-source">Платформа w2school</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-briefcase"></i> Опыт
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-name">
+                                <i class="fab fa-python"></i> Приложение на Python, Kivy
+                            </span>
+                            <span class="exp-tag">pet-проект</span>
+                        </div>
+                        <div class="exp-desc">
+                            Разработка кроссплатформенного приложения с использованием фреймворка Kivy. 
+                            Реализация интерфейса, логики и сборка под Android/iOS.
+                        </div>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-name">
+                                <i class="fas fa-globe"></i> Создание сайта через вайбкодинг
+                            </span>
+                            <span class="exp-tag">веб</span>
+                        </div>
+                        <div class="exp-desc">
+                            Разработка адаптивного сайта с использованием современных инструментов 
+                            и AI-ассистентов. Быстрый прототип и запуск проекта.
+                        </div>
+                    </div>
+
+                    <div class="portfolio-link">
+                        <div class="portfolio-text">
+                            <i class="fas fa-link"></i>
+                            <span>Мой проект (judo_skills)</span>
+                        </div>
+                        <a href="https://ivaleriya1901.github.io/judo_skills/" target="_blank" rel="noopener noreferrer">
+                            Перейти <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <i class="fas fa-code"></i> Кожевникова Валерия · студент НИУ ВШЭ · 18 лет
+        </div>
+    </div>
+</body>
+</html>
